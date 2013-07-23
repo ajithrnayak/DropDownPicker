@@ -37,7 +37,9 @@
 -(void)dropDownPicker:(AJDropDownPicker *)dropDownPicker didPickObject:(id)pickedObject
 {
     NSString *outputStatus= [NSString stringWithFormat:@"Find me on %@ at-",pickedObject];
-  
+    
+    [self.dropDownBtn setTitle:(NSString*)pickedObject forState:UIControlStateNormal];
+       
     if([pickedObject isEqualToString:@"Twitter"])
        self.urlLabel.text = [outputStatus stringByAppendingString:[NSString stringWithFormat:@"%@",[NSURL URLWithString:@"https://twitter.com/ajithrnayak"]]];
     else if ([pickedObject isEqualToString:@"Facebook"])
@@ -52,7 +54,7 @@
         self.urlLabel.text = [outputStatus stringByAppendingString:[NSString stringWithFormat:@"%@",[NSURL URLWithString:@"ajithrnayak@icloud.com"]]];
     else if ([pickedObject isEqualToString:@"Wordpress"])
         self.urlLabel.text = [outputStatus stringByAppendingString:[NSString stringWithFormat:@"%@",[NSURL URLWithString:@"http://ajithrnayak.wordpress.com"]]];
-
+    
 }
 
 @end
